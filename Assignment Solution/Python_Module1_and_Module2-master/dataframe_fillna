@@ -1,0 +1,13 @@
+import pandas as pd
+df = df = pd.read_csv(r'C:/data/...data1.csv',header=None)
+# df[1]=df[1].fillna('XXX')
+# df[2]=df[2].fillna(0)
+
+# types = list(df.iloc[0])
+# print(types)
+
+df_mode=df.mode()
+for x in df.columns.values:
+    df[x] = df[x].fillna(value=df_mode[x].iloc[0])
+
+print(df)
